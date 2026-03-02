@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #fff;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: #0B3D2E;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+nav button {
+    background-color: #D4AF37 ;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #FFF6E5;
+}
+
+main {
+    padding: 20px;
+    border: 1px;
+    border-color: black;
+}
+
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
+}
+
+.card {
+    background-color: #0B3D2E;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 15px;
+    backdrop-filter: blur(5px);
+}
+
+h2{
+    color: #0B3D2E;
+}
+.arab {
+    font-size: 22px;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.latin {
+    font-style: italic;
+    color: #FFD700;
+    margin-bottom: 8px;
+}
+
+.arti {
+    color: #FFF6E5;
+}
+
+table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 10px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #0B3D2E;
+    margin-top: 16%;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .arab {
+        font-size: 18px;
+    }
+
+    nav button {
+        width: 100%;
+    }
+}

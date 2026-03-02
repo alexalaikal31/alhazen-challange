@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Ramadhan App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<header>
+    <h1>Aplikasi Ramadhan</h1>
+    <br>
+    <h4>Doa Niat Puasa | Doa Buka Puasa </h4>
+</header>
+
+<nav>
+    <button onclick="showSection('niat')">Niat Puasa</button>
+    <button onclick="showSection('buka')">Buka Puasa</button>
+</nav>
+
+<main>
+
+<!-- NIAT PUASA -->
+<section id="niat" class="content active">
+    <h2>Doa Niat Puasa</h2>
+    <div class="card">
+        <p class="arab">نَوَيْتُ صَوْمَ غَدٍ عَنْ أَدَاءِ فَرْضِ شَهْرِ رَمَضَانَ هٰذِهِ السَّنَةِ لِلّٰهِ تَعَالَى</p>
+        <p class="latin">
+            Nawaitu shauma ghadin ‘an adā’i fardhi syahri ramadhāna hādzihis sanati lillāhi ta‘ālā
+        </p>
+        <p class="arti">
+            Artinya: Saya niat berpuasa esok hari untuk menunaikan kewajiban bulan Ramadhan karena Allah Ta'ala.
+        </p>
+    </div>
+</section>
+
+<!-- BUKA PUASA -->
+<section id="buka" class="content">
+    <h2>Doa Buka Puasa</h2>
+    <div class="card">
+        <p class="arab">اللَّهُمَّ لَكَ صُمْتُ وَبِكَ آمَنْتُ وَعَلَى رِزْقِكَ أَفْطَرْتُ</p>
+        <p class="latin">
+            Allahumma laka shumtu wabika aamantu wa ‘alaa rizqika afthartu
+        </p>
+        <p class="arti">
+            Artinya: Ya Allah, karena-Mu aku berpuasa, kepada-Mu aku beriman, dan dengan rezeki-Mu aku berbuka.
+        </p>
+    </div>
+</section>
+</main>
+
+<footer>
+    <marquee behavior="alternate">Info Puasa 1/2 Hari</marquee>
+</footer>
+
+<script src="index.js"></script>
+</body>
+</html>
