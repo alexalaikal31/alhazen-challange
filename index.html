@@ -11,12 +11,13 @@
 <header>
     <h1>Aplikasi Ramadhan</h1>
     <br>
-    <h4>Doa Niat Puasa | Doa Buka Puasa </h4>
+    <h4>Doa Niat Puasa | Doa Buka Puasa | Tasbih Digital </h4>
 </header>
 
 <nav>
     <button onclick="showSection('niat')">Niat Puasa</button>
     <button onclick="showSection('buka')">Buka Puasa</button>
+    <button onclick="showSection('zikir')">Tasbih Digital</button>
 </nav>
 
 <main>
@@ -46,6 +47,31 @@
         <p class="arti">
             Artinya: Ya Allah, karena-Mu aku berpuasa, kepada-Mu aku beriman, dan dengan rezeki-Mu aku berbuka.
         </p>
+    </div>
+</section>
+<!-- ZIKIR COUNTER -->
+<section id="zikir" class="content">
+    <h2>Tasbih Digital</h2>
+
+    <div class="card zikir-card">
+
+        <label><b>Jumlah Target Zikir : </b></label>
+        <input type="number" id="targetInput" placeholder="Masukkan target..." min="1">
+
+        <div class="counter-display">
+            <h1 id="count">0</h1>
+            <p id="targetText">Target Tercapai : 0</p>
+        </div>
+
+        <div class="progress-container">
+            <div id="progressBar"></div>
+        </div>
+
+        <div class="buttons">
+            <button class="btn-tambah" onclick="tambahZikir()">Lanjut Dzikir</button>
+            <button class="btn-reset" onclick="resetZikir()">Mulai Awal Lagi</button>
+        </div>
+
     </div>
 </section>
 </main>
