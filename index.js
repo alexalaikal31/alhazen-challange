@@ -5,45 +5,51 @@ function showSection(id) {
     document.getElementById(id).classList.add('active');
 }
 
-function loadJadwal() {
-    const city = document.getElementById('city').value;
-    const jadwal = document.getElementById('jadwal');
 
-    let data = {};
+let count = 0;
+let target = 0;
 
-    if (city === 'jakarta') {
-        data = {
-            Subuh: '04:35',
-            Dzuhur: '12:05',
-            Ashar: '15:25',
-            Maghrib: '18:10',
-            Isya: '19:20'
-        };
-    } else if (city === 'bandung') {
-        data = {
-            Subuh: '04:40',
-            Dzuhur: '12:00',
-            Ashar: '15:20',
-            Maghrib: '18:05',
-            Isya: '19:15'
-        };
-    } else if (city === 'surabaya') {
-        data = {
-            Subuh: '04:25',
-            Dzuhur: '11:55',
-            Ashar: '15:15',
-            Maghrib: '18:00',
-            Isya: '19:10'
-        };
+const countEl = document.getElementById('count');
+const targetInput = document.getElementById('targetInput');
+const targetText = document.getElementById('targetText');
+const progressBar = document.getElementById('progressBar');
+
+targetInput.addEventListener('input', function() {
+    target = parseInt(this.value) || 0;
+    targetText.textContent = "Target: " + target;
+    updateProgress();
+});
+
+function tambahZikir() {
+    count++;
+    countEl.textContent = count;
+
+    // Animasi angka
+    countEl.classList.add("animate");
+    setTimeout(() => {
+        countEl.classList.remove("animate");
+    }, 200);
+
+    updateProgress();
+
+    // Jika mencapai target
+    if (target > 0 && count >= target) {
+        alert("MasyaAllah! Target zikir telah tercapai!");
     }
+}
 
-    jadwal.innerHTML = '';
-    for (let sholat in data) {
-        jadwal.innerHTML += `
-            <tr>
-                <td>${sholat}</td>
-                <td>${data[sholat]}</td>
-            </tr>
-        `;
+function resetZikir() {
+    count = 0;
+    countEl.textContent = count;
+    updateProgress();
+}
+
+function updateProgress() {
+    if (target > 0) {
+        let percent = (count / target) * 100;
+        if (percent > 100) percent = 100;
+        progressBar.style.width = percent + "%";
+    } else {
+        progressBar.style.width = "0%";
     }
 }
