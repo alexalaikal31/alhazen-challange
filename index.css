@@ -7,8 +7,9 @@
 
 body {
     background-color: #ffffff;
-    color: #fff;
     min-height: 100vh;
+    color: #fff;
+    border: None;
 }
 
 header {
@@ -174,6 +175,101 @@ footer {
     transform: scale(0.9);
 }
 
+.zakat-form{
+margin-top:10px;
+}
+
+.hidden{
+display:none;
+}
+
+.zakat-buttons{
+margin-top:15px;
+display:flex;
+gap:10px;
+}
+
+.btn-hitung{
+width: 100%;
+background:#28a745;
+color:#ffffff;
+border:none;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.btn-reset{
+background:#dc3545;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.hasil-zakat{
+margin-top:20px;
+font-size:18px;
+}
+
+.hasil-zakat span{
+color:#FFD700;
+font-weight:bold;
+}
+.zakat-card{
+    border: 1px solid #000000;
+    display: grid;
+    grid-auto-columns: 50%;
+    background-color: #008800;
+    padding: 10px;
+}
+.h1{
+    font-size: 16px;
+    color:  #fff;
+    font-family: serif;
+    text-align: left;
+}
+.tabel{
+    text-align: left;
+    border:none;
+  font-family: Arial, sans-serif;
+}
+.containerzakat {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 kolom */
+  gap: 20px;
+  padding: 20px;
+}
+td{
+    padding: 12px;
+  border: 1px solid #000000;
+}
+.inputan{
+    width: 100%;
+    height: 35px;
+    padding: 10px;
+    border-radius: 8px;
+  border: 0px solid #ddd;
+  background: #fff;
+  font-size: 15px;
+}
+select{
+ width: 100%;
+  padding: 7px;
+  border-radius: 8px;
+  border: 0px solid #ddd;
+  background: #fff;
+  font-size: 15px;
+}
+.box {
+ background-color: #0B3D2E;
+    color: #ffffff;
+    border-radius: 5px;
+  padding: 20px;
+  font-size: 18px;
+    align-items: baseline;
+}
 /* Responsive */
 @media (max-width: 600px) {
     .arab {
