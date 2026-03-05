@@ -11,13 +11,14 @@
 <header>
     <h1>Aplikasi Ramadhan</h1>
     <br>
-    <h4>Doa Niat Puasa | Doa Buka Puasa | Tasbih Digital </h4>
+    <h4>Doa Niat Puasa | Doa Buka Puasa | Tasbih Digital | Kalkulator Zakat </h4>
 </header>
 
 <nav>
     <button onclick="showSection('niat')">Niat Puasa</button>
     <button onclick="showSection('buka')">Buka Puasa</button>
     <button onclick="showSection('zikir')">Tasbih Digital</button>
+    <button onclick="showSection('zakat')">Kalkulator Zakat</button>
 </nav>
 
 <main>
@@ -73,6 +74,84 @@
         </div>
 
     </div>
+</section>
+<section id="zakat" class="content">
+<h2>Kalkulator Zakat</h2>
+<div class="containerzakat">
+  <div class="box">
+      <table class="table">
+          <tr>
+              <td><label class="h1">Jenis Zakat</label></td>
+              <td><select class="select" id="jenisZakat" onchange="ubahFormZakat()">
+<option value="">-- Pilih --</option>
+<option value="penghasilan">Zakat Penghasilan</option>
+<option value="emas">Zakat Emas</option>
+</select>
+</td>
+          </tr>
+          <tr>
+              <td><label class="h1">Harga Emas / Gram (Rp)</label></td>
+              <td>
+                  <input class="inputan" type="number" id="hargaEmas" placeholder="Contoh: 1000000">
+              </td>
+          </tr>
+      </table>
+      
+<!-- FORM PENGHASILAN -->
+<div id="formPenghasilan" class="zakat-form hidden">
+<table class="table">
+    <tr>
+        <td><label class="h1">Gaji Bulanan</label></td>
+        <td><input class="inputan" placeholder="Contoh: 1000000" type="number" id="gaji"></td>
+    </tr>
+     <tr>
+        <td><label class="h1">Penghasilan Lain</label></td>
+        <td><input class ="inputan" type="number"   placeholder="Contoh: 1000000" id="penghasilanLain"></td>
+    </tr>
+    </table>
+</div>
+
+<!-- FORM EMAS -->
+<div id="formEmas" class="zakat-form hidden">
+<table class="table">
+    <tr>
+        <td><label class="h1">Total Emas (gram)</label></td>
+        <td><input class="inputan" type="number" id="emasGram" placeholder="Contoh: 1000000"></td>
+    </tr>
+    </table>
+</div>
+
+<div class="zakat-buttons">
+
+<button onclick="hitungZakat()" class="btn-hitung">Hitung Zakat</button>
+
+<button onclick="resetZakat()" class="btn-reset">Reset</button>
+
+</div>
+    </div>
+  <div class="box">
+      <div class="hasil-zakat">
+<table>
+    <tr>
+        <td><label class="h1">Total Harta / Penghasilan:</label></td>
+        <td><span id="totalHarta">-</span></td>
+    </tr>
+    <tr>
+        <td><label class="h1">Nisab:</label></td>
+        <td><span id="nisab">-</span></td>
+    </tr>
+    <tr>
+        <td><label class="h1">Status:</label></td>
+        <td><span id="statusZakat">-</span></td>
+    </tr>
+    <tr>
+        <td><label class="h1">Jumlah Zakat:</label></td>
+        <td><span id="jumlahZakat">-</span></td>
+    </tr>
+</table>
+</div>
+</div>
+</div>
 </section>
 </main>
 
