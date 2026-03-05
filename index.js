@@ -53,3 +53,90 @@ function updateProgress() {
         progressBar.style.width = "0%";
     }
 }
+
+function ubahFormZakat(){
+
+const jenis = document.getElementById("jenisZakat").value;
+
+document.getElementById("formPenghasilan").classList.add("hidden");
+document.getElementById("formEmas").classList.add("hidden");
+
+if(jenis === "penghasilan"){
+document.getElementById("formPenghasilan").classList.remove("hidden");
+}
+
+if(jenis === "emas"){
+document.getElementById("formEmas").classList.remove("hidden");
+}
+
+}
+
+function hitungZakat(){
+
+const jenis = document.getElementById("jenisZakat").value;
+
+const hargaEmas = parseFloat(document.getElementById("hargaEmas").value) || 0;
+
+const nisab = hargaEmas * 85;
+
+let total = 0;
+let zakat = 0;
+let status = "Tidak Wajib";
+
+if(jenis === "penghasilan"){
+
+const gaji = parseFloat(document.getElementById("gaji").value) || 0;
+const lain = parseFloat(document.getElementById("penghasilanLain").value) || 0;
+
+total = gaji + lain;
+
+if(total >= nisab){
+status = "Wajib Zakat";
+zakat = total * 0.025;
+}
+
+}
+
+if(jenis === "emas"){
+
+const gram = parseFloat(document.getElementById("emasGram").value) || 0;
+
+total = gram * hargaEmas;
+
+if(total >= nisab){
+status = "Wajib Zakat";
+zakat = total * 0.025;
+}
+
+}
+
+document.getElementById("totalHarta").innerText =
+"Rp " + total.toLocaleString("id-ID");
+
+document.getElementById("nisab").innerText =
+"Rp " + nisab.toLocaleString("id-ID");
+
+document.getElementById("statusZakat").innerText = status;
+
+document.getElementById("jumlahZakat").innerText =
+"Rp " + zakat.toLocaleString("id-ID");
+
+}
+
+function resetZakat(){
+
+document.getElementById("jenisZakat").value = "";
+document.getElementById("hargaEmas").value = "";
+document.getElementById("gaji").value = "";
+document.getElementById("penghasilanLain").value = "";
+document.getElementById("emasGram").value = "";
+
+document.getElementById("totalHarta").innerText = "-";
+document.getElementById("nisab").innerText = "-";
+document.getElementById("statusZakat").innerText = "-";
+document.getElementById("jumlahZakat").innerText = "-";
+
+document.getElementById("formPenghasilan").classList.add("hidden");
+document.getElementById("formEmas").classList.add("hidden");
+
+}
